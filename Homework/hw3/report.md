@@ -1,6 +1,8 @@
-# Homework3
+<center><h1>Homework3</h1></center>
 
-> All plots are not shown in this report in form of paper, if you want to see the plot, please visit https://algebra-fun.github.io/MSDM5053/Homework/hw3/
+<center>FAN Yifei</center>
+
+> All plots are not shown in this report in form of paper, if you want to see the plots, please visit https://algebra-fun.github.io/MSDM5053/Homework/hw3/
 
 > Note all tests use the `5%` significance level for type-I error and use `10` lags in all ACF or ARCH-effect tests.
 
@@ -26,7 +28,7 @@ Thus, claim that there is serial correlation in the log return of SBUX data.
 Using Ljung-Box test, the output is as follows:
 
 ```
-	Box-Ljung test
+    Box-Ljung test
 
 data:  sbux_at^2
 X-squared = 59.142, df = 10, p-value = 5.265e-09
@@ -78,6 +80,7 @@ Standardised Residuals Tests:
 ```
 
 #### The **formula** for the GARCH(1,1) is as follows:
+
 $$
 \begin{aligned}
 r_t &= 0.0772 + a_t\\
@@ -91,13 +94,12 @@ $$
 Using Ljung-Box test, the output is as follows:
 
 ```
-
-	Box-Ljung test
+    Box-Ljung test
 
 data:  stresi
 X-squared = 11.18, df = 10, p-value = 0.3437
 
-	Box-Ljung test
+    Box-Ljung test
 
 data:  stresi^2
 X-squared = 4.4041, df = 10, p-value = 0.9273
@@ -151,16 +153,15 @@ sp500_igarch
 The summary is as follows:
 
 ```
-
 *---------------------------------*
 *          GARCH Model Fit        *
 *---------------------------------*
 
-Conditional Variance Dynamics 	
+Conditional Variance Dynamics     
 -----------------------------------
-GARCH Model	: iGARCH(1,1)
-Mean Model	: ARFIMA(0,0,0)
-Distribution	: norm 
+GARCH Model    : iGARCH(1,1)
+Mean Model    : ARFIMA(0,0,0)
+Distribution    : norm 
 
 Optimal Parameters
 ------------------------------------
@@ -176,7 +177,6 @@ beta1   0.932459          NA       NA       NA
 The 1 to 4-step ahead forecast is as follows:
 
 ```
-
 *------------------------------------*
 *       GARCH Model Forecast         *
 *------------------------------------*
@@ -196,6 +196,7 @@ T+4 0.0397 0.5098
 The 1-step forecasting interval is $[0.0397\pm0.9806]$
 
 ## 3. Again, consider the daily percentage log returns of Starbucks stock in Problem 1.
+
 ### a. Fit a GARCH(1,1)-M model for the series with normal distribution. Write down the fitted model.
 
 Using `garchfit` in r with the following code:
@@ -215,11 +216,11 @@ The summary is as follows:
 *          GARCH Model Fit        *
 *---------------------------------*
 
-Conditional Variance Dynamics 	
+Conditional Variance Dynamics     
 -----------------------------------
-GARCH Model	: sGARCH(1,1)
-Mean Model	: ARFIMA(0,0,0)
-Distribution	: norm 
+GARCH Model    : sGARCH(1,1)
+Mean Model    : ARFIMA(0,0,0)
+Distribution    : norm 
 
 Optimal Parameters
 ------------------------------------
@@ -264,11 +265,11 @@ The summary is as follows:
 *          GARCH Model Fit        *
 *---------------------------------*
 
-Conditional Variance Dynamics 	
+Conditional Variance Dynamics     
 -----------------------------------
-GARCH Model	: eGARCH(1,1)
-Mean Model	: ARFIMA(0,0,0)
-Distribution	: norm 
+GARCH Model    : eGARCH(1,1)
+Mean Model    : ARFIMA(0,0,0)
+Distribution    : norm 
 
 Optimal Parameters
 ------------------------------------
@@ -300,7 +301,7 @@ Using Ljung-Box test to check the residuals of the fitted model, the output is a
 data:  stresi
 X-squared = 11.668, df = 10, p-value = 0.3079
 
-	Box-Ljung test
+    Box-Ljung test
 
 data:  stresi^2
 X-squared = 4.7932, df = 10, p-value = 0.9046
@@ -364,7 +365,6 @@ Standardised Residuals Tests:
                                 Statistic p-Value     
  Ljung-Box Test     R    Q(10)  7.001382  0.7253145     
  Ljung-Box Test     R^2  Q(10)  4.061319  0.9445384   
-
 ```
 
 #### The formula of the fitted model is as follows:
@@ -383,21 +383,21 @@ The 1-step to 5-step ahead forecasts for the log returns series is as follows:
 
 <!--
 Transfrom this to markdown table 
-meanForecast	meanError	standardDeviation	lowerInterval	upperInterval
-<dbl>	<dbl>	<dbl>	<dbl>	<dbl>
-0.8562431	2.952353	2.952353	-4.930263	6.642749
-0.8562431	3.034827	3.034827	-5.091908	6.804394
-0.8562431	3.111843	3.111843	-5.242858	6.955344
-0.8562431	3.183931	3.183931	-5.384148	7.096634
-0.8562431	3.251543	3.251543	-5.516664	7.229150 -->
+meanForecast    meanError    standardDeviation    lowerInterval    upperInterval
+<dbl>    <dbl>    <dbl>    <dbl>    <dbl>
+0.8562431    2.952353    2.952353    -4.930263    6.642749
+0.8562431    3.034827    3.034827    -5.091908    6.804394
+0.8562431    3.111843    3.111843    -5.242858    6.955344
+0.8562431    3.183931    3.183931    -5.384148    7.096634
+0.8562431    3.251543    3.251543    -5.516664    7.229150 -->
 
 | meanForecast | meanError | standardDeviation | lowerInterval | upperInterval |
-| :---: | :---: | :---: | :---: | :---: |
-| 0.8562431 | 2.952353 | 2.952353 | -4.930263 | 6.642749 |
-| 0.8562431 | 3.034827 | 3.034827 | -5.091908 | 6.804394 |
-| 0.8562431 | 3.111843 | 3.111843 | -5.242858 | 6.955344 |
-| 0.8562431 | 3.183931 | 3.183931 | -5.384148 | 7.096634 |
-| 0.8562431 | 3.251543 | 3.251543 | -5.516664 | 7.229150 |
+|:------------:|:---------:|:-----------------:|:-------------:|:-------------:|
+| 0.8562431    | 2.952353  | 2.952353          | -4.930263     | 6.642749      |
+| 0.8562431    | 3.034827  | 3.034827          | -5.091908     | 6.804394      |
+| 0.8562431    | 3.111843  | 3.111843          | -5.242858     | 6.955344      |
+| 0.8562431    | 3.183931  | 3.183931          | -5.384148     | 7.096634      |
+| 0.8562431    | 3.251543  | 3.251543          | -5.516664     | 7.229150      |
 
 The 1-step forecasting interval is $[-4.9303,6.6427]$.
 
@@ -420,8 +420,7 @@ Using the $\alpha=0.05$ significance level, the $p=0.29 > \alpha$, then not reje
 Using Ljung-Box test to check the ARCH effect of the log return series, the output is as follows:
 
 ```
-
-	Box-Ljung test
+    Box-Ljung test
 
 data:  exchange_at^2
 X-squared = 29.121, df = 10, p-value = 0.001191
@@ -436,7 +435,6 @@ Thus, claim that there is ARCH correlation in the log return of Exchange data.
 Using `ugarchfit` in r with the following code:
 
 ```r
-
 exchange_spec=ugarchspec(variance.model=list(model="iGARCH", garchOrder=c(1,1)),
                  mean.model=list(armaOrder=c(0,0)) )
 exchange_igarch=ugarchfit(spec=exchange_spec,data=exchange_data)
@@ -450,11 +448,11 @@ The summary is as follows:
 *          GARCH Model Fit        *
 *---------------------------------*
 
-Conditional Variance Dynamics 	
+Conditional Variance Dynamics     
 -----------------------------------
-GARCH Model	: iGARCH(1,1)
-Mean Model	: ARFIMA(0,0,0)
-Distribution	: norm 
+GARCH Model    : iGARCH(1,1)
+Mean Model    : ARFIMA(0,0,0)
+Distribution    : norm 
 
 Optimal Parameters
 ------------------------------------
@@ -480,12 +478,12 @@ $$
 Using Ljung-Box test to check the residuals of the fitted model, the output is as follows:
 
 ```
-	Box-Ljung test
+    Box-Ljung test
 
 data:  stresi
 X-squared = 9.6109, df = 10, p-value = 0.4753
 
-	Box-Ljung test
+    Box-Ljung test
 
 data:  stresi^2
 X-squared = 11.828, df = 10, p-value = 0.2968
